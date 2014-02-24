@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class rock2 extends Dolphin
 {
+    private int stopmove = 1;
     /**
      * Act - do whatever the rock wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,37 +21,37 @@ public class rock2 extends Dolphin
     }    
 
     public void directionr() {
-        if (direction == 1 && rockcounter == -1) {
+        if (direction == 1 && stopmove == 1) {
             setRotation(-45 - 10);
-            rockcounter--;
+            stopmove--;
         }
-        else if (direction == 2 && rockcounter == -1) {
+        else if (direction == 2 && stopmove == 1) {
             setRotation(-90 - 10);
-            rockcounter--;
+            stopmove--;
         }
-        else if (direction == 3 && rockcounter == -1) {
+        else if (direction == 3 && stopmove == 1) {
             setRotation(-135 - 10);
-            rockcounter--;
+            stopmove--;
         }
-        else if (direction == 4 && rockcounter == -1) {
+        else if (direction == 4 && stopmove == 1) {
             setRotation(-180 - 10);
-            rockcounter--;
+            stopmove--;
         }
-        else if (direction == 5 && rockcounter == -1) {
+        else if (direction == 5 && stopmove == 1) {
             setRotation(-215 - 10);
-            rockcounter--;
+            stopmove--;
         }
-        else if (direction == 6 && rockcounter == -1) {
+        else if (direction == 6 && stopmove == 1) {
             setRotation(-270 - 10);
-            rockcounter--;
+            stopmove--;
         }
-        else if (direction == 7 && rockcounter == -1) {
+        else if (direction == 7 && stopmove == 1) {
             setRotation(-315 - 10);
-            rockcounter--;
+            stopmove--;
         }
-        else if (direction == 0 && rockcounter == -1) {
+        else if (direction == 0 && stopmove == 1) {
             setRotation(0 - 10);
-            rockcounter--;
+            stopmove--;
         }        
     }
 
@@ -60,12 +61,12 @@ public class rock2 extends Dolphin
 
     public void touchesedge() {
         if (getX() <= 10 ||  getY() <= 10) {
-            //rockcounter = 1;
+            stopmove =1;
             getWorld().removeObject(this);
 
         }
         else if (getX() >= getWorld().getWidth() -10 || getY() >= getWorld().getHeight() -10) {
-            //rockcounter = 1;
+            stopmove = 1;
             getWorld().removeObject(this);
 
         }

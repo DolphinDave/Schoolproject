@@ -25,10 +25,11 @@ public class Dolphin extends Animals
     private GreenfootImage dolphin315 = new GreenfootImage("dolphin/dolphin315.png");
     private GreenfootImage dolphin3151 = new GreenfootImage("dolphin/dolphin3151.png");
     public static int direction = 0; // for a ball or semthing else, 0 = right, 1 = 45 ... in ball check for number, then setLocation(getX() + ..., getY() - ...);
-    public static int rockcounter = 2; // only experimental to 2
+    public static int rockcounter = 1; // only experimental to 2
     private int waitcounter = 50;
     private int imagecounter = 30;
     public static int number;  // says how many shoots are fired
+    public static int numberofrocks = 10;
     /**
      * Act - do whatever the Dolphin wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -38,6 +39,7 @@ public class Dolphin extends Animals
         Greenfoot.setSpeed(50);
         atWorldEdge();
         movement();
+        changerockcounter();
         shoot();
 
     }
@@ -236,8 +238,8 @@ public class Dolphin extends Animals
     public void shoot() {
         if (Greenfoot.isKeyDown("space") && rockcounter == 1 && waitcounter == 50) { // waitcounter counts only if shoot is fired != 50
             number = 1;
-            getWorld().addObject(new rock(), getX(), getY()); // when shoot is fired, waitcounter counts down always
-            rockcounter--;
+            getWorld().addObject(new rock(), getX(), getY()); // when shoot is fired, waitcounter counts always down
+            //rockcounter--;
             waitcounter--;
 
         }
@@ -245,7 +247,7 @@ public class Dolphin extends Animals
             number = 2;
             getWorld().addObject(new rock(), getX(), getY());
             getWorld().addObject(new rock2(), getX(), getY());
-            rockcounter = 0;
+            //rockcounter = 0;
             waitcounter--;
         }
         else if (Greenfoot.isKeyDown("space") && rockcounter == 3 && waitcounter == 50) {
@@ -253,7 +255,7 @@ public class Dolphin extends Animals
             getWorld().addObject(new rock(), getX(), getY());
             getWorld().addObject(new rock2(), getX(), getY());
             getWorld().addObject(new rock3(), getX(), getY());
-            rockcounter = 0;
+            //rockcounter = 0;
             waitcounter--;
         }
         else if ( waitcounter != 50 && waitcounter > 0) {
@@ -263,6 +265,17 @@ public class Dolphin extends Animals
             waitcounter = 50;
         }
 
-
+    }
+    
+    public void changerockcounter() {
+        if (Greenfoot.isKeyDown("1")) {
+            rockcounter = 1;
+        }
+        else if (Greenfoot.isKeyDown("2")) {
+            rockcounter = 2;
+        }
+        else if (Greenfoot.isKeyDown("3")) {
+            rockcounter = 3;
+        }
     }
 }
