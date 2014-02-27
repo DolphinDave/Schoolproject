@@ -236,27 +236,30 @@ public class Dolphin extends Animals
     }
 
     public void shoot() {
-        if (Greenfoot.isKeyDown("space") && rockcounter == 1 && waitcounter == 50) { // waitcounter counts only if shoot is fired != 50
+        if (Greenfoot.isKeyDown("space") && rockcounter == 1 && waitcounter == 50 && numberofrocks >= 1) { // waitcounter counts only if shoot is fired != 50
             number = 1;
             getWorld().addObject(new rock(), getX(), getY()); // when shoot is fired, waitcounter counts always down
             //rockcounter--;
             waitcounter--;
+            numberofrocks = numberofrocks - 1;
 
         }
-        else if (Greenfoot.isKeyDown("space") && rockcounter == 2 && waitcounter == 50) {
+        else if (Greenfoot.isKeyDown("space") && rockcounter == 2 && waitcounter == 50 && numberofrocks >= 2) {
             number = 2;
             getWorld().addObject(new rock(), getX(), getY());
             getWorld().addObject(new rock2(), getX(), getY());
             //rockcounter = 0;
             waitcounter--;
+            numberofrocks = numberofrocks - 2;
         }
-        else if (Greenfoot.isKeyDown("space") && rockcounter == 3 && waitcounter == 50) {
+        else if (Greenfoot.isKeyDown("space") && rockcounter == 3 && waitcounter == 50 && numberofrocks >= 3) {
             number = 3;
             getWorld().addObject(new rock(), getX(), getY());
             getWorld().addObject(new rock2(), getX(), getY());
             getWorld().addObject(new rock3(), getX(), getY());
             //rockcounter = 0;
             waitcounter--;
+            numberofrocks = numberofrocks - 3;
         }
         else if ( waitcounter != 50 && waitcounter > 0) {
             waitcounter--;                           

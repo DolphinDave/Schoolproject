@@ -19,10 +19,11 @@ public class world extends World
         super(800, 600, 1); 
         addObject(new rockcounter(), 60, 110);
         addObject(new rocksleft(), 70, 25);
+        addObject(new rocksleftcount(), 155, 25);
         addObject(new Dolphin(), 400, 300);
-        
     }
-        public void started() { //Sets speed after pausing back to 50
+
+    public void started() { //Sets speed after pausing back to 50
         Greenfoot.setSpeed(50);
     }
 }
