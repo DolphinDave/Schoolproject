@@ -17,7 +17,8 @@ public class world extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        addObject(new rockcounter(), 60, 150);
+        addObject(new rockcounter(), 60, 110);
+        addObject(new rocksleft(), 70, 25);
         addObject(new Dolphin(), 400, 300);
         
     }
