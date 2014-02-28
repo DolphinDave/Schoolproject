@@ -29,7 +29,7 @@ public class Dolphin extends Animals
     private int waitcounter = 50;
     private int imagecounter = 30;
     public static int number;  // says how many shoots are fired
-    public static int numberofrocks = 10;
+    public static int numberofrocks = 20;
     /**
      * Act - do whatever the Dolphin wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

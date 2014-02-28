@@ -11,8 +11,11 @@ public class rocksleftcount extends rocksleft
     private GreenfootImage a0 = new GreenfootImage("rocksleft/0.png");
     private GreenfootImage a0r = new GreenfootImage("rocksleft/0r.png");
     private GreenfootImage a1 = new GreenfootImage("rocksleft/1.png");
+    private GreenfootImage a1r = new GreenfootImage("rocksleft/1r.png");
     private GreenfootImage a2 = new GreenfootImage("rocksleft/2.png");
+    private GreenfootImage a2r = new GreenfootImage("rocksleft/2r.png");
     private GreenfootImage a3 = new GreenfootImage("rocksleft/3.png");
+    private GreenfootImage a3r = new GreenfootImage("rocksleft/3r.png");
     private GreenfootImage a4 = new GreenfootImage("rocksleft/4.png");
     private GreenfootImage a5 = new GreenfootImage("rocksleft/5.png");
     private GreenfootImage a6 = new GreenfootImage("rocksleft/6.png");
@@ -31,6 +34,9 @@ public class rocksleftcount extends rocksleft
     private GreenfootImage a19 = new GreenfootImage("rocksleft/19.png");
     private GreenfootImage max = new GreenfootImage("rocksleft/max.png");
     private int timer0 = 50;
+    private int timer1 = 50;
+    private int timer2 = 50;
+    private int timer3 = 50;
     /**
      * Act - do whatever the rocksleftcount wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -52,15 +58,39 @@ public class rocksleftcount extends rocksleft
         else if (timer0 < 0) {
             timer0 = 50;
         }
-        else if (numberofrocks == 1) {
+        else if (numberofrocks == 1 && timer1 >= 25) {
             setImage(a1);
+            timer1--;
         }
-        else if (numberofrocks == 2) {
+        else if (numberofrocks == 1 && timer1 < 25 && timer1 >= 0) {
+            setImage(a1r);
+            timer1--;
+        }
+        else if (timer1 < 0) {
+            timer1 = 50;
+        }
+        else if (numberofrocks == 2 && timer2 >= 25) {
             setImage(a2);
-        }        
-        else if (numberofrocks == 3) {
+            timer2--;
+        }
+        else if (numberofrocks == 2 && timer2 < 25 && timer2 >= 0) {
+            setImage(a2r);
+            timer2--;
+        }
+        else if (timer2 < 0) {
+            timer2 = 50;
+        }
+        else if (numberofrocks == 3 && timer3 >= 25) {
             setImage(a3);
-        }        
+            timer3--;
+        }
+        else if (numberofrocks == 3 && timer3 < 25 && timer3 >= 0) {
+            setImage(a3r);
+            timer3--;
+        }
+        else if (timer3 < 0) {
+            timer3 = 50;
+        }    
         else if (numberofrocks == 4) {
             setImage(a4);
         }        
@@ -112,6 +142,7 @@ public class rocksleftcount extends rocksleft
         else if (numberofrocks == 20) {
             setImage(max);
         }
+        else return;
 
     }
 }
