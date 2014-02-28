@@ -1,0 +1,11 @@
+ToDO:
+
+- Soundeffect für error (wenn versucht wird, zu schießen, aber keine Steine mehr da sind)
+- Hintergrundmusik
+- Soundeffect für Endgegner
+- Gegner erstellen
+- Schwierigkeiteit einbauen
+- Score benötigt
+- Hai animieren
+
+Done:
