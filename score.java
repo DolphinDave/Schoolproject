@@ -1,20 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.awt.*;
 /**
- * Write a description of class Animals here.
+ * Write a description of class score here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Animals extends Actor
+public class score extends Animals
 {
-    public static int score = 0;
     /**
-     * Act - do whatever the Animals wants to do. This method is called whenever
+     * Act - do whatever the score wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-       
     }    
 }

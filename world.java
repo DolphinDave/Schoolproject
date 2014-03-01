@@ -17,13 +17,21 @@ public class world extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        addObject(new rockcounter(), 60, 110);
-        addObject(new rocksleft(), 70, 25);
-        addObject(new rocksleftcount(), 155, 25);
-        addObject(new Dolphin(), 400, 300);
+        prepare();
     }
 
     public void started() { //Sets speed after pausing back to 50
         Greenfoot.setSpeed(50);
+    }
+
+    private void prepare()
+    {
+        addObject(new rockcounter(), 60, 110);
+        addObject(new rocksleft(), 70, 25);
+        addObject(new rocksleftcount(), 155, 25);
+        addObject(new score(), 670, 20);
+        addObject(new scorecounter(), 720, 20);
+        addObject(new Dolphin(), 400, 300);
+
     }
 }

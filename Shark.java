@@ -15,7 +15,7 @@ public class Shark extends Animals
     private int animationt = 60;
     private int turn = 1;
     /**
-     * Act - do whatever the fish wants to do. This method is called whenever
+     * Act - do whatever the Shark wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
