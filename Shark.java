@@ -8,12 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Shark extends Animals
 {
-    private GreenfootImage hai = new GreenfootImage("hai/hai.png");
-    private GreenfootImage hai1 = new GreenfootImage("hai/hai1.png");
-    private GreenfootImage hai2 = new GreenfootImage("/hai/hai2.png");
+    private GreenfootImage hai = new GreenfootImage("hai/hair.png");
+    private GreenfootImage hai1 = new GreenfootImage("hai/hai1r.png");
+    private GreenfootImage hai2 = new GreenfootImage("/hai/hai2r.png");
     private int waitforturn = 20;
-    private int a = Greenfoot.getRandomNumber(500);
-    private int animationt = 100;
+    private int animationt = 60;
+    private int turn = 1;
     /**
      * Act - do whatever the fish wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -26,22 +26,27 @@ public class Shark extends Animals
     }        
 
     public void movefish() {
-        setLocation(getX() - 1, getY());
+        int a = Greenfoot.getRandomNumber(500); // needs to be here, to get every time a new random number
+        if (turn == 1) {
+            turn(180);
+            turn--;
+        }
+        move(1);
         if (waitforturn <= 0) { //&& schwierigkeit 1 ... schwierigkeit 2 ... waitforturn runtersetzen, verschiebung vergrößern 
-            if (a <= 50 && getY() <= 550) {
-                setLocation(getX(), getY() - 2);
+            if (a <= 2 && getY() <= 550 && getRotation() <= 190) {
+                turn (35);
                 waitforturn = 20;
             }
-            else if (a >= 450 && getY() >= 50) {
-                setLocation(getX(), getY() + 2);
+            else if (a >= 498 && getY() >= 50 && getRotation() >= 150) {
+                turn (-35);
                 waitforturn = 20;
             }
-            else if (a <= 100 && getY() >= 400) { // a higher chance to go up if shark is in the lower half
-                setLocation(getX(), getY() - 2);
+            else if (a <= 100 && getY() >= 400 && getRotation() <= 190) { // a higher chance to go up if shark is in the lower half
+                turn (35);
                 waitforturn = 20;
             }
-            else if (a >= 400 && getY() <= 200) { // a higher chance to go down if shark is in the upper half
-                setLocation(getX(), getY() + 2);
+            else if (a >= 450 && getY() <= 200 && getRotation() >= 150) { // a higher chance to go down if shark is in the upper half
+                turn (-35);
                 waitforturn = 20;
             }
         }
@@ -59,20 +64,20 @@ public class Shark extends Animals
 
     public void animation() {
         animationt--;
-        if (animationt >= 75) {
+        if (animationt >= 45) {
             setImage(hai);
         }
-        else if (animationt < 75 && animationt >= 50) {
+        else if (animationt < 45 && animationt >= 30) {
             setImage(hai1);
         }
-        else if (animationt < 50 && animationt >= 25) {
+        else if (animationt < 30 && animationt >= 15) {
             setImage(hai);
         }
-        else if (animationt < 25 && animationt >= 0) {
+        else if (animationt < 15 && animationt >= 0) {
             setImage(hai2);
         }
         else if (animationt <= 0) {
-            animationt = 100;
+            animationt = 60;
         }
 
     }

@@ -41,6 +41,7 @@ public class Dolphin extends Animals
         movement();
         changerockcounter();
         shoot();
+        randomShark();
 
     }
 
@@ -269,7 +270,7 @@ public class Dolphin extends Animals
         }
 
     }
-    
+
     public void changerockcounter() {
         if (Greenfoot.isKeyDown("1")) {
             rockcounter = 1;
@@ -280,5 +281,20 @@ public class Dolphin extends Animals
         else if (Greenfoot.isKeyDown("3")) {
             rockcounter = 3;
         }
+    }
+
+    public void randomShark() {
+        int t = Greenfoot.getRandomNumber(500);
+        int height = Greenfoot.getRandomNumber(600);
+        int Height;
+        if (height >= 50 && height <= getWorld().getHeight() - 45) {
+            Height = height;
+        }
+        else return;
+
+        if (t == 2 && getWorld().numberOfObjects() <= 10 ) {
+            getWorld().addObject(new Shark(), 780, Height);
+        }
+        else return;
     }
 }
