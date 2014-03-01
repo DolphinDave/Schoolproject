@@ -46,7 +46,9 @@ public class Dolphin extends Animals
     }
 
     public void movement() {
-        setLocation(getX() - 1, getY());
+        if (getX() > 42) {
+            setLocation(getX() - 1, getY());
+        }
         if(Greenfoot.isKeyDown("up") && Greenfoot.isKeyDown("right")) {
             imagecounter--;
             setLocation(getX() + 2, getY() - 2);
