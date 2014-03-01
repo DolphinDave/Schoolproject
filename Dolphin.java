@@ -168,6 +168,9 @@ public class Dolphin extends Animals
                 imagecounter = 30;
             }
         }
+        else {
+        setLocation(getX() - 1, getY());
+        }
 
     }
 
