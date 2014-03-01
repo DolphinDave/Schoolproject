@@ -180,16 +180,16 @@ public class Dolphin extends Animals
 
         if (getX() >= getWorld().getWidth() - 100) { // right border is bigger, because of the spawn
             if (Greenfoot.isKeyDown("right") && Greenfoot.isKeyDown("up")) {
-                setLocation(getX() - 2, getY() - 1);
+                setLocation(getX() - 1, getY() - 1);
             }
             else if (Greenfoot.isKeyDown("right") && Greenfoot.isKeyDown("down")) {
-                setLocation(getX() - 2, getY() + 1);
+                setLocation(getX() - 1, getY() + 1);
             }
             else if (Greenfoot.isKeyDown("right")){
-                setLocation(getX() - 3, getY());
+                setLocation(getX() - 2, getY());
             }
             else {
-                setLocation(getX() - 3, getY());
+                setLocation(getX() - 2, getY());
             }
         }
         else if (getX() <= 40) { // left border
