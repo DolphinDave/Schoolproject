@@ -1,4 +1,4 @@
 Schoolproject
 =============
 
-A Project for the school
+A Project for school
