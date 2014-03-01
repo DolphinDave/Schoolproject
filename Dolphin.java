@@ -46,7 +46,7 @@ public class Dolphin extends Animals
     }
 
     public void movement() {
-
+        setLocation(getX() - 1, getY());
         if(Greenfoot.isKeyDown("up") && Greenfoot.isKeyDown("right")) {
             imagecounter--;
             setLocation(getX() + 2, getY() - 2);
@@ -169,7 +169,7 @@ public class Dolphin extends Animals
             }
         }
         else {
-        setLocation(getX() - 1, getY());
+        
         }
 
     }
