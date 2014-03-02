@@ -304,7 +304,7 @@ public class Dolphin extends Animals
     }
 
     public void removeDS() {
-        
+
         if(canSee(Shark.class) && (getWorld().getObjects(Shark.class).size() != 0)) {  // checks if the two actors are touching and checks if ther are any Sharks in the World
             health--;
             getWorld().removeObject(this);

@@ -17,14 +17,18 @@ public class rockcounter extends Dolphin
      */
     public void act() 
     {
+        rockimagechanger();
+    }    
+
+    public void rockimagechanger() {
         if(rockcounter == 1) {
-        setImage(rockimage1);
+            setImage(rockimage1);
         }
         else if (rockcounter == 2) {
-        setImage(rockimage2);
+            setImage(rockimage2);
         }
         else if (rockcounter == 3) {
-        setImage (rockimage3);
+            setImage (rockimage3);
         }
-    }    
+    }
 }

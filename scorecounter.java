@@ -14,11 +14,15 @@ public class scorecounter extends score
      */
     public void act() 
     {
+        paint();
+    }    
+
+    public void paint() {
         GreenfootImage img = new GreenfootImage( 50, 27 );
         img.setColor( new Color( 153, 255, 85 ));
         img.setFont( new Font("Comic Sans MS", Font.BOLD, 24 ));
         img.scale(100, 32);
         img.drawString("" + score, 43, 25 );
         setImage(img);
-    }    
+    }
 }
