@@ -84,11 +84,7 @@ public class Shark extends Animals
     }
 
     public void deletefish() {
-        if (getX() <= 20) {
-            waitforturn = 20;
-            getWorld().removeObject(this);
-        }
-        else return;
+
     }
 
     public void removeSR() {
@@ -107,5 +103,10 @@ public class Shark extends Animals
             getWorld().removeObjects(getWorld().getObjects(rock3.class));
             getWorld().removeObject(this);
         }
+        else         if (getX() <= 20) {
+            waitforturn = 20;
+            getWorld().removeObject(this);
+        }
+        else return;
     }
 }
