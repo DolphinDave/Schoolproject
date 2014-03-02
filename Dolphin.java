@@ -25,7 +25,7 @@ public class Dolphin extends Animals
     private GreenfootImage dolphin315 = new GreenfootImage("dolphin/dolphin315.png");
     private GreenfootImage dolphin3151 = new GreenfootImage("dolphin/dolphin3151.png");
     public static int direction = 0; // for a ball or semthing else, 0 = right, 1 = 45 ... in ball check for number, then setLocation(getX() + ..., getY() - ...);
-    public static int rockcounter = 1; // only experimental to 2
+    public static int rockcounter = 1;
     private int waitcounter = 50;
     private int imagecounter = 30;
     public static int number;  // says how many shoots are fired
