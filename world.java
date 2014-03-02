@@ -31,6 +31,8 @@ public class world extends World
         addObject(new rocksleftcount(), 155, 25);
         addObject(new score(), 670, 20);
         addObject(new scorecounter(), 720, 20);
+        addObject(new health(), 350, 20);
+        addObject(new display(), 420, 20);
         addObject(new Dolphin(), 400, 300);
 
     }
