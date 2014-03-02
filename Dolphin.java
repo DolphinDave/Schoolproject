@@ -29,7 +29,7 @@ public class Dolphin extends Animals
     private int waitcounter = 50;
     private int imagecounter = 30;
     public static int number;  // says how many shoots are fired
-    public static int numberofrocks = 20;
+    public static int numberofrocks = 10;
     /**
      * Act - do whatever the Dolphin wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -41,8 +41,8 @@ public class Dolphin extends Animals
         movement();
         changerockcounter();
         shoot();
-        randomShark();
-
+        randomShark(); // produces some random shark
+        removeDS(); // removes Dolphin at contact with shark
     }
 
     public void movement() {
@@ -171,7 +171,7 @@ public class Dolphin extends Animals
             }
         }
         else {
-        
+
         }
 
     }
@@ -301,5 +301,14 @@ public class Dolphin extends Animals
             getWorld().addObject(new Shark(), 780, Height);
         }
         else return;
+    }
+
+    public void removeDS() {
+        
+        if(canSee(Shark.class) && (getWorld().getObjects(Shark.class).size() != 0)) {  // checks if the two actors are touching and checks if ther are any Sharks in the World
+            health--;
+            getWorld().removeObject(this);
+            Greenfoot.stop(); // just for now
+        }
     }
 }

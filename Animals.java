@@ -9,12 +9,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Animals extends Actor
 {
     public static int score = 0;
+    public static int health = 3;
     /**
      * Act - do whatever the Animals wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-       
+
     }    
+
+    /**
+     * Return true if we can see an object of class 'clss' right where we are. 
+     * False if there is no such object here.
+     */
+    public boolean canSee(Class clss)
+    {
+        Actor actor = getOneObjectAtOffset(0, 0, clss);
+        return actor != null;        
+    }
 }
