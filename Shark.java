@@ -22,7 +22,6 @@ public class Shark extends Animals
     {
         movefish();
         animation();
-        deletefish();
         removeSR(); //removes Shark when touching rock
     }        
 
@@ -83,10 +82,6 @@ public class Shark extends Animals
 
     }
 
-    public void deletefish() {
-
-    }
-
     public void removeSR() {
         if (canSee(rock.class) && (getWorld().getObjects(rock.class).size() != 0)) {
             score++;
@@ -103,7 +98,7 @@ public class Shark extends Animals
             getWorld().removeObjects(getWorld().getObjects(rock3.class));
             getWorld().removeObject(this);
         }
-        else         if (getX() <= 20) {
+        else if (getX() <= 20) {
             waitforturn = 20;
             getWorld().removeObject(this);
         }
