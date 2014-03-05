@@ -24,6 +24,22 @@ public class Dolphin extends Animals
     private GreenfootImage dolphin2701 = new GreenfootImage("dolphin/dolphin2701.png");
     private GreenfootImage dolphin315 = new GreenfootImage("dolphin/dolphin315.png");
     private GreenfootImage dolphin3151 = new GreenfootImage("dolphin/dolphin3151.png");
+    private GreenfootImage dolphint = new GreenfootImage("dolphint/dolphint.png");
+    private GreenfootImage dolphin1t = new GreenfootImage("dolphint/dolphin1t.png");
+    private GreenfootImage dolphin45t = new GreenfootImage("dolphint/dolphin45t.png");
+    private GreenfootImage dolphin451t = new GreenfootImage("dolphint/dolphin451t.png");
+    private GreenfootImage dolphin90t = new GreenfootImage("dolphint/dolphin90t.png");
+    private GreenfootImage dolphin901t = new GreenfootImage("dolphint/dolphin901t.png");
+    private GreenfootImage dolphin135t = new GreenfootImage("dolphint/dolphin135t.png");
+    private GreenfootImage dolphin1351t = new GreenfootImage("dolphint/dolphin1351t.png");
+    private GreenfootImage dolphin180t = new GreenfootImage("dolphint/dolphin180t.png");
+    private GreenfootImage dolphin1801t = new GreenfootImage("dolphint/dolphin1801t.png");
+    private GreenfootImage dolphin225t = new GreenfootImage("dolphint/dolphin225t.png");
+    private GreenfootImage dolphin2251t = new GreenfootImage("dolphint/dolphin2251t.png");
+    private GreenfootImage dolphin270t = new GreenfootImage("dolphint/dolphin270t.png");
+    private GreenfootImage dolphin2701t = new GreenfootImage("dolphint/dolphin2701t.png");
+    private GreenfootImage dolphin315t = new GreenfootImage("dolphint/dolphin315t.png");
+    private GreenfootImage dolphin3151t = new GreenfootImage("dolphint/dolphin3151t.png");
     public static int direction = 0; // for a ball or semthing else, 0 = right, 1 = 45 ... in ball check for number, then setLocation(getX() + ..., getY() - ...);
     public static int rockcounter = 1;
     private int waitcounter = 50;
@@ -49,135 +65,262 @@ public class Dolphin extends Animals
         if (getX() > 42) {
             setLocation(getX() - 1, getY());
         }
-        if(Greenfoot.isKeyDown("up") && Greenfoot.isKeyDown("right")) {
-            imagecounter--;
-            setLocation(getX() + 2, getY() - 2);
-            //setImage(dolphin45);
-            direction = 1;
-            if (imagecounter >= 15) {
-                setImage(dolphin451);
+        if (toxic == 0) {
+            if(Greenfoot.isKeyDown("up") && Greenfoot.isKeyDown("right")) {
+                imagecounter--;
+                setLocation(getX() + 2, getY() - 2);
+                //setImage(dolphin45);
+                direction = 1;
+                if (imagecounter >= 15) {
+                    setImage(dolphin451);
+                }
+                else if (imagecounter < 15 && imagecounter >= 0) {
+                    setImage(dolphin45);
+                }
+                else if (imagecounter <= 0) {
+                    imagecounter = 30;
+                }
             }
-            else if (imagecounter < 15 && imagecounter >= 0) {
-                setImage(dolphin45);
+            else if(Greenfoot.isKeyDown("up") && Greenfoot.isKeyDown("left")) {
+                imagecounter--;
+                setLocation(getX() - 2, getY() - 2);
+                //setImage(dolphin135);
+                direction = 3;
+                if (imagecounter >= 15) {
+                    setImage(dolphin1351);
+                }
+                else if (imagecounter < 15 && imagecounter >= 0) {
+                    setImage(dolphin135);
+                }
+                else if (imagecounter <= 0) {
+                    imagecounter = 30;
+                }
             }
-            else if (imagecounter <= 0) {
-                imagecounter = 30;
+            else if(Greenfoot.isKeyDown("down") && Greenfoot.isKeyDown("left")) {
+                imagecounter--;
+                setLocation(getX() - 2, getY() + 2);
+                //setImage(dolphin225);
+                direction = 5;
+                if (imagecounter >= 15) {
+                    setImage(dolphin2251);
+                }
+                else if (imagecounter < 15 && imagecounter >= 0) {
+                    setImage(dolphin225);
+                }
+                else if (imagecounter <= 0) {
+                    imagecounter = 30;
+                }
             }
-        }
-        else if(Greenfoot.isKeyDown("up") && Greenfoot.isKeyDown("left")) {
-            imagecounter--;
-            setLocation(getX() - 2, getY() - 2);
-            //setImage(dolphin135);
-            direction = 3;
-            if (imagecounter >= 15) {
-                setImage(dolphin1351);
+            else if(Greenfoot.isKeyDown("down") && Greenfoot.isKeyDown("right")) {
+                imagecounter--;
+                setLocation(getX() + 2, getY() + 2);
+                //setImage(dolphin315);
+                direction = 7;
+                if (imagecounter >= 15) {
+                    setImage(dolphin3151);
+                }
+                else if (imagecounter < 15 && imagecounter >= 0) {
+                    setImage(dolphin315);
+                }
+                else if (imagecounter <= 0) {
+                    imagecounter = 30;
+                }
             }
-            else if (imagecounter < 15 && imagecounter >= 0) {
-                setImage(dolphin135);
+
+            else if (Greenfoot.isKeyDown("up")) {
+                imagecounter--;
+                setLocation(getX(), getY() - 3);
+                //setImage(dolphin90);
+                direction = 2;
+                if (imagecounter >= 15) {
+                    setImage(dolphin901);
+                }
+                else if (imagecounter < 15 && imagecounter >= 0) {
+                    setImage(dolphin90);
+                }
+                else if (imagecounter <= 0) {
+                    imagecounter = 30;
+                }
             }
-            else if (imagecounter <= 0) {
-                imagecounter = 30;
+            else if (Greenfoot.isKeyDown("down")) {
+                imagecounter--;
+                setLocation(getX(), getY() + 3);
+                //setImage(dolphin270);
+                direction = 6;
+                if (imagecounter >= 15) {
+                    setImage(dolphin2701);
+                }
+                else if (imagecounter < 15 && imagecounter >= 0) {
+                    setImage(dolphin270);
+                }
+                else if (imagecounter <= 0) {
+                    imagecounter = 30;
+                }
             }
-        }
-        else if(Greenfoot.isKeyDown("down") && Greenfoot.isKeyDown("left")) {
-            imagecounter--;
-            setLocation(getX() - 2, getY() + 2);
-            //setImage(dolphin225);
-            direction = 5;
-            if (imagecounter >= 15) {
-                setImage(dolphin2251);
+            else if (Greenfoot.isKeyDown("right")) {
+                imagecounter--;
+                setLocation(getX() + 3, getY());
+                //setImage(dolphin);
+                direction = 0;
+                if (imagecounter >= 15) {
+                    setImage(dolphin1);
+                }
+                else if (imagecounter < 15 && imagecounter >= 0) {
+                    setImage(dolphin);
+                }
+                else if (imagecounter <= 0) {
+                    imagecounter = 30;
+                }
             }
-            else if (imagecounter < 15 && imagecounter >= 0) {
-                setImage(dolphin225);
+            else if (Greenfoot.isKeyDown("left")) {
+                imagecounter--;
+                setLocation(getX() - 3, getY());
+                //setImage(dolphin180);
+                direction = 4;
+                if (imagecounter >= 15) {
+                    setImage(dolphin1801);
+                }
+                else if (imagecounter < 15 && imagecounter >= 0) {
+                    setImage(dolphin180);
+                }
+                else if (imagecounter <= 0) {
+                    imagecounter = 30;
+                }
             }
-            else if (imagecounter <= 0) {
-                imagecounter = 30;
-            }
-        }
-        else if(Greenfoot.isKeyDown("down") && Greenfoot.isKeyDown("right")) {
-            imagecounter--;
-            setLocation(getX() + 2, getY() + 2);
-            //setImage(dolphin315);
-            direction = 7;
-            if (imagecounter >= 15) {
-                setImage(dolphin3151);
-            }
-            else if (imagecounter < 15 && imagecounter >= 0) {
-                setImage(dolphin315);
-            }
-            else if (imagecounter <= 0) {
-                imagecounter = 30;
+            else {
+
             }
         }
 
-        else if (Greenfoot.isKeyDown("up")) {
-            imagecounter--;
-            setLocation(getX(), getY() - 3);
-            //setImage(dolphin90);
-            direction = 2;
-            if (imagecounter >= 15) {
-                setImage(dolphin901);
+        if (toxic == 1) {
+            if(Greenfoot.isKeyDown("up") && Greenfoot.isKeyDown("right")) {
+                imagecounter--;
+                setLocation(getX() + 2, getY() - 2);
+                //setImage(dolphin45);
+                direction = 1;
+                if (imagecounter >= 15) {
+                    setImage(dolphin451t);
+                }
+                else if (imagecounter < 15 && imagecounter >= 0) {
+                    setImage(dolphin45t);
+                }
+                else if (imagecounter <= 0) {
+                    imagecounter = 30;
+                }
             }
-            else if (imagecounter < 15 && imagecounter >= 0) {
-                setImage(dolphin90);
+            else if(Greenfoot.isKeyDown("up") && Greenfoot.isKeyDown("left")) {
+                imagecounter--;
+                setLocation(getX() - 2, getY() - 2);
+                //setImage(dolphin135);
+                direction = 3;
+                if (imagecounter >= 15) {
+                    setImage(dolphin1351t);
+                }
+                else if (imagecounter < 15 && imagecounter >= 0) {
+                    setImage(dolphin135t);
+                }
+                else if (imagecounter <= 0) {
+                    imagecounter = 30;
+                }
             }
-            else if (imagecounter <= 0) {
-                imagecounter = 30;
+            else if(Greenfoot.isKeyDown("down") && Greenfoot.isKeyDown("left")) {
+                imagecounter--;
+                setLocation(getX() - 2, getY() + 2);
+                //setImage(dolphin225);
+                direction = 5;
+                if (imagecounter >= 15) {
+                    setImage(dolphin2251t);
+                }
+                else if (imagecounter < 15 && imagecounter >= 0) {
+                    setImage(dolphin225t);
+                }
+                else if (imagecounter <= 0) {
+                    imagecounter = 30;
+                }
             }
-        }
-        else if (Greenfoot.isKeyDown("down")) {
-            imagecounter--;
-            setLocation(getX(), getY() + 3);
-            //setImage(dolphin270);
-            direction = 6;
-            if (imagecounter >= 15) {
-                setImage(dolphin2701);
+            else if(Greenfoot.isKeyDown("down") && Greenfoot.isKeyDown("right")) {
+                imagecounter--;
+                setLocation(getX() + 2, getY() + 2);
+                //setImage(dolphin315);
+                direction = 7;
+                if (imagecounter >= 15) {
+                    setImage(dolphin3151t);
+                }
+                else if (imagecounter < 15 && imagecounter >= 0) {
+                    setImage(dolphin315t);
+                }
+                else if (imagecounter <= 0) {
+                    imagecounter = 30;
+                }
             }
-            else if (imagecounter < 15 && imagecounter >= 0) {
-                setImage(dolphin270);
-            }
-            else if (imagecounter <= 0) {
-                imagecounter = 30;
-            }
-        }
-        else if (Greenfoot.isKeyDown("right")) {
-            imagecounter--;
-            setLocation(getX() + 3, getY());
-            //setImage(dolphin);
-            direction = 0;
-            if (imagecounter >= 15) {
-                setImage(dolphin1);
-            }
-            else if (imagecounter < 15 && imagecounter >= 0) {
-                setImage(dolphin);
-            }
-            else if (imagecounter <= 0) {
-                imagecounter = 30;
-            }
-        }
-        else if (Greenfoot.isKeyDown("left")) {
-            imagecounter--;
-            setLocation(getX() - 3, getY());
-            //setImage(dolphin180);
-            direction = 4;
-            if (imagecounter >= 15) {
-                setImage(dolphin1801);
-            }
-            else if (imagecounter < 15 && imagecounter >= 0) {
-                setImage(dolphin180);
-            }
-            else if (imagecounter <= 0) {
-                imagecounter = 30;
-            }
-        }
-        else {
 
-        }
+            else if (Greenfoot.isKeyDown("up")) {
+                imagecounter--;
+                setLocation(getX(), getY() - 3);
+                //setImage(dolphin90);
+                direction = 2;
+                if (imagecounter >= 15) {
+                    setImage(dolphin901t);
+                }
+                else if (imagecounter < 15 && imagecounter >= 0) {
+                    setImage(dolphin90t);
+                }
+                else if (imagecounter <= 0) {
+                    imagecounter = 30;
+                }
+            }
+            else if (Greenfoot.isKeyDown("down")) {
+                imagecounter--;
+                setLocation(getX(), getY() + 3);
+                //setImage(dolphin270);
+                direction = 6;
+                if (imagecounter >= 15) {
+                    setImage(dolphin2701t);
+                }
+                else if (imagecounter < 15 && imagecounter >= 0) {
+                    setImage(dolphin270t);
+                }
+                else if (imagecounter <= 0) {
+                    imagecounter = 30;
+                }
+            }
+            else if (Greenfoot.isKeyDown("right")) {
+                imagecounter--;
+                setLocation(getX() + 3, getY());
+                //setImage(dolphin);
+                direction = 0;
+                if (imagecounter >= 15) {
+                    setImage(dolphin1t);
+                }
+                else if (imagecounter < 15 && imagecounter >= 0) {
+                    setImage(dolphint);
+                }
+                else if (imagecounter <= 0) {
+                    imagecounter = 30;
+                }
+            }
+            else if (Greenfoot.isKeyDown("left")) {
+                imagecounter--;
+                setLocation(getX() - 3, getY());
+                //setImage(dolphin180);
+                direction = 4;
+                if (imagecounter >= 15) {
+                    setImage(dolphin1801t);
+                }
+                else if (imagecounter < 15 && imagecounter >= 0) {
+                    setImage(dolphin180t);
+                }
+                else if (imagecounter <= 0) {
+                    imagecounter = 30;
+                }
+            }
+            else {
 
+            }
+        }
     }
 
     public void atWorldEdge() {         
-
         if (getX() >= getWorld().getWidth() - 100) { // right border is bigger, because of the spawn
             if (Greenfoot.isKeyDown("right") && Greenfoot.isKeyDown("up")) {
                 setLocation(getX() - 1, getY() - 1);
@@ -202,9 +345,9 @@ public class Dolphin extends Animals
             }
             else if (Greenfoot.isKeyDown("left")){
                 setLocation(getX() + 3, getY());
-            }	
+            }   
             else {
-                setLocation(getX() + 3, getY());	
+                setLocation(getX() + 3, getY());    
             }
         }
         else if (getY() <= 50) { // upper border
@@ -219,7 +362,7 @@ public class Dolphin extends Animals
                 setLocation(getX(), getY() + 3);
             }
             else {
-                setLocation(getX(), getY() + 3);	
+                setLocation(getX(), getY() + 3);    
             }
         }
 
@@ -235,7 +378,7 @@ public class Dolphin extends Animals
                 setLocation(getX(), getY() - 3);
             }
             else {
-                setLocation(getX(), getY() -3);	
+                setLocation(getX(), getY() -3); 
             }
         }
 

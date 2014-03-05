@@ -10,6 +10,7 @@ public class Animals extends Actor
 {
     public static int score = 0;
     public static int health = 3;
+    public static int toxic = 0;
     /**
      * Act - do whatever the Animals wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

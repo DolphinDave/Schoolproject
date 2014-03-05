@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="470.62122"
+   height="482.54648"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="toxic.svg">
+  <defs
+     id="defs4">
+    <filter
+       inkscape:collect="always"
+       id="filter3815">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="20.032607"
+         id="feGaussianBlur3817" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="312.13911"
+     inkscape:cy="331.21677"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1360"
+     inkscape:window-height="706"
+     inkscape:window-x="-32000"
+     inkscape:window-y="-32000"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-46.756282,-404.10142)">
+    <g
+       id="g2986">
+      <path
+         sodipodi:type="star"
+         style="fill:#ff0066;fill-opacity:1;fill-rule:nonzero;stroke:none;filter:url(#filter3815)"
+         id="path2983"
+         sodipodi:sides="5"
+         sodipodi:cx="-91.428574"
+         sodipodi:cy="198.07648"
+         sodipodi:r1="305.60745"
+         sodipodi:r2="157.83469"
+         sodipodi:arg1="1.8067049"
+         sodipodi:arg2="0.32657196"
+         inkscape:flatsided="false"
+         inkscape:rounded="0"
+         inkscape:randomized="0"
+         d="M -162.85713,495.21933 58.064173,248.70954 -396.10086,221.96607 -93.387677,355.899 -208.29784,-84.301795 -242.13211,244.9831 141.01453,-0.33248983 -182.60938,69.243838 169.09844,357.83126 2.9221284,71.546903 z"
+         inkscape:transform-center-x="-3.6152867"
+         inkscape:transform-center-y="0.89183354"
+         transform="matrix(0.83266418,0,0,0.83266418,376.57528,474.2965)"
+         inkscape:export-filename="C:\Users\Schmid\Documents\GitHub\Schoolproject\images\future shoot?.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Schmid\Documents\GitHub\Schoolproject\images\future shoot?.png"
+         transform="matrix(0.83266418,0,0,0.83266418,376.57528,474.2965)"
+         inkscape:transform-center-y="0.89183354"
+         inkscape:transform-center-x="-3.6152867"
+         d="M -162.85713,495.21933 58.064173,248.70954 -396.10086,221.96607 -93.387677,355.899 -208.29784,-84.301795 -242.13211,244.9831 141.01453,-0.33248983 -182.60938,69.243838 169.09844,357.83126 2.9221284,71.546903 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="false"
+         sodipodi:arg2="0.32657196"
+         sodipodi:arg1="1.8067049"
+         sodipodi:r2="157.83469"
+         sodipodi:r1="305.60745"
+         sodipodi:cy="198.07648"
+         sodipodi:cx="-91.428574"
+         sodipodi:sides="5"
+         id="path2987"
+         style="fill:#800080;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         sodipodi:type="star" />
+    </g>
+  </g>
+</svg>
