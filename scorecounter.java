@@ -18,11 +18,22 @@ public class scorecounter extends score
     }    
 
     public void paint() {
-        GreenfootImage img = new GreenfootImage( 50, 27 );
-        img.setColor( new Color( 153, 255, 85 ));
-        img.setFont( new Font("Comic Sans MS", Font.BOLD, 24 ));
-        img.scale(100, 32);
-        img.drawString("" + score, 43, 25 );
-        setImage(img);
+        if (score <= 10000) {
+            GreenfootImage img = new GreenfootImage( 50, 27 );
+            img.setColor( new Color( 153, 255, 85 ));
+            img.setFont( new Font("Comic Sans MS", Font.BOLD, 24 ));
+            img.scale(110, 32);
+            img.drawString("" + score, 47, 25 );
+            setImage(img);
+        }
+        else if (score > 10000) {
+            GreenfootImage img = new GreenfootImage( 50, 27 );
+            img.setColor( new Color( 153, 255, 85 ));
+            img.setFont( new Font("Comic Sans MS", Font.BOLD, 24 ));
+            img.scale(110, 32);
+            img.drawString("Max.", 47, 25 );
+            setImage(img);
+            score = 10000;
+        }
     }
 }
