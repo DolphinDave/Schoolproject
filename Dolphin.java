@@ -443,12 +443,20 @@ public class Dolphin extends Animals
         if (t == 2 && getWorld().numberOfObjects() <= 10 ) {
             getWorld().addObject(new Shark(), 780, Height);
         }
+        else if (t == 1 && getWorld().numberOfObjects() <= 10) {
+            getWorld().addObject(new Jellyfish(), 790, Height);
+        }
         else return;
     }
 
     public void removeDS() {
 
-        if(canSee(Shark.class) && (getWorld().getObjects(Shark.class).size() != 0)) {  // checks if the two actors are touching and checks if ther are any Sharks in the World
+        if (canSee(Shark.class) && (getWorld().getObjects(Shark.class).size() != 0)) {  // checks if the two actors are touching and checks if ther are any Sharks in the World
+            health--;
+            getWorld().removeObject(this);
+            Greenfoot.stop(); // just for now
+        }
+        else if (canSee(Jellyfish.class) && (getWorld().getObjects(Jellyfish.class).size() != 0)) {
             health--;
             getWorld().removeObject(this);
             Greenfoot.stop(); // just for now

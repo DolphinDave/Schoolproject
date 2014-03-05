@@ -34,6 +34,5 @@ public class world extends World
         addObject(new health(), 370, 20);
         addObject(new display(), 435, 20);
         addObject(new Dolphin(), 400, 300);
-
     }
 }
