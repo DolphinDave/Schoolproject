@@ -456,7 +456,17 @@ public class Dolphin extends Animals
             getWorld().removeObject(this);
             Greenfoot.stop(); // just for now
         }
+        
         else if (canSee(Jellyfish.class) && (getWorld().getObjects(Jellyfish.class).size() != 0)) {
+            Actor jelly = getOneIntersectingObject(Jellyfish.class);
+            toxic++;
+            getWorld().removeObject(jelly); //removes only the touching actor, not all from the same class
+            toxicdeath();
+        }
+    }
+
+    public void toxicdeath() {
+        if (toxic >= 2) {
             health--;
             getWorld().removeObject(this);
             Greenfoot.stop(); // just for now
