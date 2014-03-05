@@ -314,8 +314,8 @@ public class Dolphin extends Animals
                     imagecounter = 30;
                 }
             }
-            else {
-
+            else if (toxic >= 2) {
+                getWorld().removeObject(this);
             }
         }
     }
