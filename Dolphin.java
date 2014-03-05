@@ -63,7 +63,7 @@ public class Dolphin extends Animals
 
     public void movement() {
         if (getX() > 42) {
-            setLocation(getX() - 1, getY());
+            setLocation(getX() - 1, getY()); // necessary for the flow
         }
         if (toxic == 0) {
             if(Greenfoot.isKeyDown("up") && Greenfoot.isKeyDown("right")) {
