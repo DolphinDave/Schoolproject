@@ -79,6 +79,9 @@ public class Shark extends Animals
         else if (animationt <= 0) {
             animationt = 60;
         }
+        else {
+        setImage(hai);
+        }
 
     }
 

@@ -26,13 +26,13 @@ public class world extends World
 
     private void prepare()
     {
-        addObject(new rockcounter(), 60, 110);
-        addObject(new rocksleft(), 70, 25);
-        addObject(new rocksleftcount(), 155, 25);
+        addObject(new rockcounter(), 60, 100);
+        addObject(new rocksleft(), 70, 20);
+        addObject(new rocksleftcount(), 155, 20);
         addObject(new score(), 670, 20);
         addObject(new scorecounter(), 720, 20);
-        addObject(new health(), 350, 20);
-        addObject(new display(), 420, 20);
+        addObject(new health(), 370, 20);
+        addObject(new display(), 435, 20);
         addObject(new Dolphin(), 400, 300);
 
     }

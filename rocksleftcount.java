@@ -32,11 +32,13 @@ public class rocksleftcount extends rocksleft
     private GreenfootImage a17 = new GreenfootImage("rocksleft/17.png");
     private GreenfootImage a18 = new GreenfootImage("rocksleft/18.png");
     private GreenfootImage a19 = new GreenfootImage("rocksleft/19.png");
+    private GreenfootImage a20 = new GreenfootImage("rocksleft/20.png");
     private GreenfootImage max = new GreenfootImage("rocksleft/max.png");
     private int timer0 = 50;
     private int timer1 = 50;
     private int timer2 = 50;
     private int timer3 = 50;
+    private int timerm = 50;
     /**
      * Act - do whatever the rocksleftcount wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -139,8 +141,19 @@ public class rocksleftcount extends rocksleft
         else if (numberofrocks == 19) {
             setImage(a19);
         }
+        else if (numberofrocks > 20 && timerm > 0) { // has to be bevore 20 because of numberofrocks = 20;
+            setImage(max);                           // otherwise it wouldn't work
+            timerm--;
+            numberofrocks = 20;
+        }
+        else if (timerm != 50 && timerm > 0) {
+            timerm--;
+        }
+        else if (timerm <= 0) {
+            timerm = 50;
+        }
         else if (numberofrocks == 20) {
-            setImage(max);
+            setImage(a20);
         }
         else return;
 
