@@ -17,13 +17,13 @@ public class toxic extends Dolphin
     {
         deletetoxic();
     }    
-    
+
     public void deletetoxic() {
-    if (countanddelete >= 0) {
-    countanddelete--;
-    }
-    else if (countanddelete < 0) {
-    getWorld().removeObject(this);
-    }
+        if (countanddelete >= 0) {
+            countanddelete--;
+        }
+        else if (countanddelete < 0) {
+            getWorld().removeObject(this);
+        }
     }
 }

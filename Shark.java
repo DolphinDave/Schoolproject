@@ -80,7 +80,7 @@ public class Shark extends Animals
             animationt = 60;
         }
         else {
-        setImage(hai);
+            setImage(hai);
         }
 
     }
