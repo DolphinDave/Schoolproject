@@ -46,6 +46,8 @@ public class Dolphin extends Animals
     private int imagecounter = 30;
     public static int number;  // says how many shoots are fired
     public static int numberofrocks = 10;
+    private int getxjelly;
+    private int getyjelly;
     /**
      * Act - do whatever the Dolphin wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -459,9 +461,16 @@ public class Dolphin extends Animals
         
         else if (canSee(Jellyfish.class) && (getWorld().getObjects(Jellyfish.class).size() != 0)) {
             Actor jelly = getOneIntersectingObject(Jellyfish.class);
+            getxjelly = jelly.getX();
+            getyjelly = jelly.getY();
+            getWorld().addObject(new toxic(), getxjelly + 10, getyjelly - 6);
+            getWorld().addObject(new toxic(), getxjelly - 8, getyjelly - 12);
+            getWorld().addObject(new toxic(), getxjelly + 6, getyjelly + 6);
             toxic++;
             getWorld().removeObject(jelly); //removes only the touching actor, not all from the same class
             toxicdeath();
+            
+            
         }
     }
 

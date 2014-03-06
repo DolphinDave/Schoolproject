@@ -9,8 +9,8 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="470.62122"
-   height="482.54648"
+   width="24.08687"
+   height="24.608477"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
@@ -22,7 +22,8 @@
      id="defs4">
     <filter
        inkscape:collect="always"
-       id="filter3815">
+       id="filter3815"
+       color-interpolation-filters="sRGB">
       <feGaussianBlur
          inkscape:collect="always"
          stdDeviation="20.032607"
@@ -36,9 +37,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="312.13911"
-     inkscape:cy="331.21677"
+     inkscape:zoom="2.8"
+     inkscape:cx="59.496514"
+     inkscape:cy="52.455751"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -67,9 +68,13 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-46.756282,-404.10142)">
+     transform="translate(-280.94948,-654.22401)">
     <g
-       id="g2986">
+       id="g2986"
+       transform="matrix(0.04373965,0,0,0.04373965,280.65541,638.29979)"
+       inkscape:export-filename="C:\Users\Schmid\Desktop\toxic.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <path
          sodipodi:type="star"
          style="fill:#ff0066;fill-opacity:1;fill-rule:nonzero;stroke:none;filter:url(#filter3815)"
