@@ -1,1 +1,0 @@
-(getWorld().getObjects(Rocket.class).size() != 0)
