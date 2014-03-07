@@ -113,7 +113,7 @@ public class Shark extends Animals
             getWorld().removeObjects(getWorld().getObjects(rock3.class));
             getWorld().removeObject(this);
         }
-        else if (getX() <= 20) {
+        else if (getX() <= 15) {
             waitforturn = 20;
             getWorld().removeObject(this);
         }

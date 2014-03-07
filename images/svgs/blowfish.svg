@@ -499,9 +499,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="57.814024"
-     inkscape:cy="61.09224"
+     inkscape:zoom="2.8"
+     inkscape:cx="155.9965"
+     inkscape:cy="68.722108"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -524,7 +524,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2029,7 +2029,7 @@
        inkscape:export-filename="C:\Users\Schmid\Desktop\blowfishar.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"
-       transform="matrix(-1,0,0,-1,1971.9302,1380.3174)">
+       transform="translate(-1.2519186e-5,-3.1067528e-5)">
       <path
          sodipodi:nodetypes="sccccsssccssssccc"
          inkscape:connector-curvature="0"
@@ -2496,7 +2496,7 @@
        inkscape:export-filename="C:\Users\Schmid\Desktop\blowfish1ar.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"
-       transform="matrix(-1,0,0,-1,1971.9302,1380.3174)">
+       transform="translate(-1.2519186e-5,-3.1067528e-5)">
       <path
          style="fill:url(#linearGradient4523);fill-opacity:1;fill-rule:nonzero;stroke:none"
          d="m 1006.2377,667.73425 c -14.43063,0 -26.1395,9.89831 -26.1395,22.11072 0,1.15527 0.0832,2.28685 0.28555,3.39432 2.20252,-0.32492 6.39337,1.94407 6.03777,3.75138 -1.38433,2.15359 -4.48188,0.38103 -5.76135,-0.88727 3.69719,8.41173 14.35043,15.85227 25.57753,15.85227 14.4307,0 26.1078,-9.8983 26.1078,-22.1107 0,-12.21241 -11.6771,-22.11072 -26.1078,-22.11072 z"

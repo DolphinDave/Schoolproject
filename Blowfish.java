@@ -27,11 +27,13 @@ public class Blowfish extends Animals
     {
         animation();
         moveblow();
+        removeB(); //removes Blowfish
     }    
 
     public void moveblow() {
         int a = Greenfoot.getRandomNumber(500); // needs to be here, to get every time a new random number
         if (turn == 1) {
+            setImage(blowfish);
             turn(180);
             turn--;
         }
@@ -68,11 +70,7 @@ public class Blowfish extends Animals
     public void animation() {
         int random = Greenfoot.getRandomNumber(100);
         animationcounter--;
-        if (turnimage == 1) {
-            setImage(blowfish);
-            turnimage--;
-        }
-        else if (random == 15 && duration >= 0) {
+        if (random == 15 && duration >= 0) {
             setImage(blowfish1);
             duration--;
         }
@@ -104,6 +102,40 @@ public class Blowfish extends Animals
             duration = 150;
             waitfornextblowup = 100;
         }
+    }
 
+    public boolean isrockInRange1() {
+        return !getObjectsInRange(25, rock.class).isEmpty();  // checks for rocks in a radius of 25px. Helps to deal with the big shark image
+    }
+
+    public boolean isrockInRange2() {
+        return !getObjectsInRange(25, rock2.class).isEmpty();  // return only if the list isn't empty
+    }
+
+    public boolean isrockInRange3() {
+        return !getObjectsInRange(25, rock3.class).isEmpty();  
+    }
+
+    public void removeB() {
+        if (isrockInRange1() && (getWorld().getObjects(rock.class).size() != 0)) {
+            score++;
+            getWorld().removeObjects(getWorld().getObjects(rock.class));
+            getWorld().removeObject(this);
+        }
+        else if (isrockInRange2() && (getWorld().getObjects(rock2.class).size() != 0)) {
+            score++;
+            getWorld().removeObjects(getWorld().getObjects(rock2.class));
+            getWorld().removeObject(this);
+        }
+        else if (isrockInRange3() && (getWorld().getObjects(rock3.class).size() != 0)) {
+            score++;
+            getWorld().removeObjects(getWorld().getObjects(rock3.class));
+            getWorld().removeObject(this);
+        }
+        else if (getX() <= 10) {
+            waitforturn = 20;
+            getWorld().removeObject(this);
+        }
+        else return;
     }
 }

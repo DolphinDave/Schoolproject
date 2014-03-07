@@ -48,6 +48,9 @@ public class Dolphin extends Animals
     public static int numberofrocks = 10;
     private int getxjelly;
     private int getyjelly;
+    private int slowdown = 0;
+    private int slowdownmove = 0;
+
     /**
      * Act - do whatever the Dolphin wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -59,15 +62,16 @@ public class Dolphin extends Animals
         movement();
         changerockcounter();
         shoot();
-        randomShark(); // produces some random shark
-        removeDS(); // removes Dolphin at contact with shark
+        randomEnemy(); // creates some random Enemys
+        removeD(); // removes Dolphin at contact with something
+        blowfishtouch();
     }
 
     public void movement() {
         if (getX() > 42) {
             setLocation(getX() - 1, getY()); // necessary for the flow
         }
-        if (toxic == 0) {
+        if (toxic == 0 && slowdownmove == 0) {
             if(Greenfoot.isKeyDown("up") && Greenfoot.isKeyDown("right")) {
                 imagecounter--;
                 setLocation(getX() + 2, getY() - 2);
@@ -194,7 +198,7 @@ public class Dolphin extends Animals
             }
         }
 
-        if (toxic == 1) {
+        if (toxic == 1 && slowdownmove == 0) {
             if(Greenfoot.isKeyDown("up") && Greenfoot.isKeyDown("right")) {
                 imagecounter--;
                 setLocation(getX() + 2, getY() - 2);
@@ -433,7 +437,7 @@ public class Dolphin extends Animals
         }
     }
 
-    public void randomShark() {
+    public void randomEnemy() {
         int t = Greenfoot.getRandomNumber(500);
         int height = Greenfoot.getRandomNumber(600);
         int Height;
@@ -442,16 +446,23 @@ public class Dolphin extends Animals
         }
         else return;
 
-        if (t == 2 && getWorld().numberOfObjects() <= 10 ) {
+        if (t == 1 && getWorld().numberOfObjects() <= 10 ) {
             getWorld().addObject(new Shark(), 780, Height);
         }
-        else if (t == 1 && getWorld().numberOfObjects() <= 10) {
+        else if (t == 2 && getWorld().numberOfObjects() <= 10) {
             getWorld().addObject(new Jellyfish(), 790, Height);
+        }
+        else if (t == 3 && getWorld().numberOfObjects() <= 10) {
+            getWorld().addObject(new Blowfish(), 790, Height);
         }
         else return;
     }
 
-    public void removeDS() {
+    public boolean isBlowfishInRange() {
+        return !getObjectsInRange(30, Blowfish.class).isEmpty();  // checks for rocks in a radius of 25px. Helps to deal with the big shark image
+    }
+
+    public void removeD() {
 
         if (canSee(Shark.class) && (getWorld().getObjects(Shark.class).size() != 0)) {  // checks if the two actors are touching and checks if ther are any Sharks in the World
             health--;
@@ -470,6 +481,11 @@ public class Dolphin extends Animals
             getWorld().removeObject(jelly); //removes only the touching actor, not all from the same class
             toxicdeath();    
         }
+        else if (isBlowfishInRange() && (getWorld().getObjects(Blowfish.class).size() != 0)) {
+            Actor blow = getOneIntersectingObject(Blowfish.class);
+            getWorld().removeObject(blow);
+            blowfishtouch++;
+        }
     }
 
     public void toxicdeath() {
@@ -477,6 +493,24 @@ public class Dolphin extends Animals
             health--;
             getWorld().removeObject(this);
             Greenfoot.stop(); // just for now
+        }
+    }
+
+    public void blowfishtouch() {
+        if (blowfishtouch > 0) {
+            slowdown = 200;
+            blowfishtouch = 0;
+        }
+        if (slowdown > 0 && slowdownmove == 1) {
+            slowdown--;
+            slowdownmove = 0;
+        }
+        else if (slowdown > 0 && slowdownmove == 0) {
+            slowdown--;
+            slowdownmove = 1;
+        }
+        else if (slowdown <= 0) {
+            slowdownmove = 0;
         }
     }
 }
