@@ -48,18 +48,30 @@ public class Jellyfish extends Animals
         }
     }
 
+    public boolean isrockInRange1() {
+        return !getObjectsInRange(25, rock.class).isEmpty();  // checks for rocks in a radius of 25px. Helps to deal with the big shark image
+    }
+
+    public boolean isrockInRange2() {
+        return !getObjectsInRange(25, rock2.class).isEmpty();  // return only if the list isn't empty
+    }
+
+    public boolean isrockInRange3() {
+        return !getObjectsInRange(25, rock3.class).isEmpty();  
+    }
+
     public void removeJR() {
-        if (canSee(rock.class) && (getWorld().getObjects(rock.class).size() != 0)) {
+        if (isrockInRange1() && (getWorld().getObjects(rock.class).size() != 0)) {
             score++;
             getWorld().removeObjects(getWorld().getObjects(rock.class));
             getWorld().removeObject(this);
         }
-        else if (canSee(rock2.class) && (getWorld().getObjects(rock2.class).size() != 0)) {
+        else if (isrockInRange1() && (getWorld().getObjects(rock2.class).size() != 0)) {
             score++;
             getWorld().removeObjects(getWorld().getObjects(rock2.class));
             getWorld().removeObject(this);
         }
-        else if (canSee(rock3.class) && (getWorld().getObjects(rock3.class).size() != 0)) {
+        else if (isrockInRange1() && (getWorld().getObjects(rock3.class).size() != 0)) {
             score++;
             getWorld().removeObjects(getWorld().getObjects(rock3.class));
             getWorld().removeObject(this);
