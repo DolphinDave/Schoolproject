@@ -86,15 +86,15 @@ public class Shark extends Animals
     }
 
     public boolean isrockInRange1() {
-        return !getObjectsInRange(25, rock.class).isEmpty();  // checks for rocks in a radius of 25px. Helps to deal with the big shark image
+        return !getObjectsInRange(30, rock.class).isEmpty();  // checks for rocks in a radius of 25px. Helps to deal with the big shark image
     }
 
     public boolean isrockInRange2() {
-        return !getObjectsInRange(25, rock2.class).isEmpty();  // return only if the list isn't empty
+        return !getObjectsInRange(30, rock2.class).isEmpty();  // return only if the list isn't empty
     }
 
     public boolean isrockInRange3() {
-        return !getObjectsInRange(25, rock3.class).isEmpty();  
+        return !getObjectsInRange(30, rock3.class).isEmpty();  
     }
 
     public void removeSR() {

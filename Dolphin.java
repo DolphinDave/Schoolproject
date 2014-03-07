@@ -45,7 +45,6 @@ public class Dolphin extends Animals
     private int waitcounter = 50;
     private int imagecounter = 30;
     public static int number;  // says how many shoots are fired
-    public static int numberofrocks = 10;
     private int getxjelly;
     private int getyjelly;
     private int slowdown = 0;
@@ -455,6 +454,12 @@ public class Dolphin extends Animals
         else if (t == 3 && getWorld().numberOfObjects() <= 10) {
             getWorld().addObject(new Blowfish(), 790, Height);
         }
+        else if (t == 4 && getWorld().numberOfObjects() <= 10) {
+            getWorld().addObject(new Stone(), 790, Height);
+        }
+        else if (t == 5 && getWorld().numberOfObjects() <= 10) {
+            getWorld().addObject(new Stone(), 790, Height);
+        }
         else return;
     }
 
@@ -463,13 +468,11 @@ public class Dolphin extends Animals
     }
 
     public void removeD() {
-
         if (canSee(Shark.class) && (getWorld().getObjects(Shark.class).size() != 0)) {  // checks if the two actors are touching and checks if ther are any Sharks in the World
             health--;
             getWorld().removeObject(this);
             Greenfoot.stop(); // just for now
         }
-
         else if (canSee(Jellyfish.class) && (getWorld().getObjects(Jellyfish.class).size() != 0)) {
             Actor jelly = getOneIntersectingObject(Jellyfish.class);
             getxjelly = jelly.getX();
