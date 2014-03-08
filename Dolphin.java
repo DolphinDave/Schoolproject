@@ -64,6 +64,7 @@ public class Dolphin extends Animals
         randomEnemy(); // creates some random Enemys
         removeD(); // removes Dolphin at contact with something
         blowfishtouch();
+        starfishtouch();
 
     }
 
@@ -471,14 +472,19 @@ public class Dolphin extends Animals
     }
 
     public void removeD() {
-        if (canSee(Shark.class) && (getWorld().getObjects(Shark.class).size() != 0)) {  // checks if the two actors are touching and checks if ther are any Sharks in the World
+        if (canSee(Shark.class) && (getWorld().getObjects(Shark.class).size() != 0) && untouchable == 0) {  // checks if the two actors are touching and checks if ther are any Sharks in the World
             world dolphinworld = (world) getWorld();
             dolphinworld.musicstop();
             health--;
             getWorld().removeObject(this);
             Greenfoot.stop(); // just for now
         }
-        else if (canSee(Jellyfish.class) && (getWorld().getObjects(Jellyfish.class).size() != 0)) {
+        else if (canSee(Shark.class) && (getWorld().getObjects(Shark.class).size() != 0) && untouchable > 0) {  // checks if the two actors are touching and checks if ther are any Sharks in the World
+            Actor shark = getOneIntersectingObject(Shark.class);
+            getWorld().removeObject(shark);
+            score++;
+        }
+        else if (canSee(Jellyfish.class) && (getWorld().getObjects(Jellyfish.class).size() != 0) && untouchable == 0) {
             Actor jelly = getOneIntersectingObject(Jellyfish.class);
             getxjelly = jelly.getX();
             getyjelly = jelly.getY();
@@ -489,10 +495,23 @@ public class Dolphin extends Animals
             getWorld().removeObject(jelly); //removes only the touching actor, not all from the same class
             toxicdeath();    
         }
-        else if (isBlowfishInRange() && (getWorld().getObjects(Blowfish.class).size() != 0)) {
+
+        else if (canSee(Jellyfish.class) && (getWorld().getObjects(Jellyfish.class).size() != 0) && untouchable > 0) {
+            Actor jelly = getOneIntersectingObject(Jellyfish.class);
+            getWorld().removeObject(jelly);
+            score++;
+        }
+
+        else if (isBlowfishInRange() && (getWorld().getObjects(Blowfish.class).size() != 0) && untouchable == 0) {
             Actor blow = getOneIntersectingObject(Blowfish.class);
             getWorld().removeObject(blow);
             blowfishtouch++;
+        }
+
+        else if (isBlowfishInRange() && (getWorld().getObjects(Blowfish.class).size() != 0) && untouchable > 0) {
+            Actor blow = getOneIntersectingObject(Blowfish.class);
+            getWorld().removeObject(blow);
+            score++;
         }
     }
 
@@ -508,7 +527,7 @@ public class Dolphin extends Animals
 
     public void blowfishtouch() {
         if (blowfishtouch > 0) {
-            slowdown = 200;
+            slowdown = 250;
             blowfishtouch = 0;
         }
         if (slowdown > 0 && slowdownmove == 1) {
@@ -521,6 +540,12 @@ public class Dolphin extends Animals
         }
         else if (slowdown <= 0) {
             slowdownmove = 0;
+        }
+    }
+
+    public void starfishtouch() {
+        if (untouchable > 0) {
+            untouchable--;
         }
     }
 }

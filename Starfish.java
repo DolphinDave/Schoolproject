@@ -14,6 +14,13 @@ public class Starfish extends Animals
      */
     public void act() 
     {
-        // untouchable = 500;
-    }    
+        untouch();
+    }  
+
+    public void untouch() {
+        if (canSee(Dolphin.class) && (getWorld().getObjects(Dolphin.class).size() != 0)) {
+            getWorld().removeObject(this);
+            untouchable = 500;
+        }
+    }
 }
