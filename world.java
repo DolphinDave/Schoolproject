@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Write a description of class world here.
@@ -8,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class world extends World
 {
+    public static GreenfootSound start = new GreenfootSound("start.wav");
 
     /**
      * Constructor for objects of class world.
@@ -22,6 +24,14 @@ public class world extends World
 
     public void started() { //Sets speed after pausing back to 50
         Greenfoot.setSpeed(50);
+        if (getObjects(Dolphin.class).size() != 0) {
+            start.playLoop();
+        }
+    }
+
+    public void stopped()  
+    {  
+        start.pause();
     }
 
     private void prepare()
@@ -35,4 +45,9 @@ public class world extends World
         addObject(new display(), 435, 20);
         addObject(new Dolphin(), 400, 300);
     }
+
+    public void musicstop() {
+        start.stop();
+    }
+
 }

@@ -64,6 +64,7 @@ public class Dolphin extends Animals
         randomEnemy(); // creates some random Enemys
         removeD(); // removes Dolphin at contact with something
         blowfishtouch();
+
     }
 
     public void movement() {
@@ -320,6 +321,8 @@ public class Dolphin extends Animals
                 }
             }
             else if (toxic >= 2) {
+                world dolphinworld = (world) getWorld();
+                dolphinworld.musicstop();
                 getWorld().removeObject(this);
             }
         }
@@ -469,6 +472,8 @@ public class Dolphin extends Animals
 
     public void removeD() {
         if (canSee(Shark.class) && (getWorld().getObjects(Shark.class).size() != 0)) {  // checks if the two actors are touching and checks if ther are any Sharks in the World
+            world dolphinworld = (world) getWorld();
+            dolphinworld.musicstop();
             health--;
             getWorld().removeObject(this);
             Greenfoot.stop(); // just for now
@@ -492,9 +497,11 @@ public class Dolphin extends Animals
     }
 
     public void toxicdeath() {
+        world dolphinworld = (world) getWorld();
         if (toxic >= 2) {
             health--;
             getWorld().removeObject(this);
+            dolphinworld.musicstop();
             Greenfoot.stop(); // just for now
         }
     }

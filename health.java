@@ -14,6 +14,5 @@ public class health extends Animals
      */
     public void act() 
     {
-        // Add your action code here.
+        }
     }    
-}

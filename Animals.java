@@ -20,7 +20,6 @@ public class Animals extends Actor
      */
     public void act() 
     {
-
     }    
 
     /**

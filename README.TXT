@@ -10,5 +10,5 @@ PROJEKTBEZEICHNUNG: Dolphinworld
 PROJEKTZWECK: Schoolproject
 VERSION oder DATUM: 0.1
 WIE IST DAS PROJEKT ZU STARTEN:
-AUTOR(EN): atm only Schmid Andreas, later maybe Daniel Klier, David Putlitz
+AUTOR(EN): chmid Andreas, Daniel Klier, David Putlitz
 BENUTZERHINWEISE:
