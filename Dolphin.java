@@ -448,7 +448,7 @@ public class Dolphin extends Animals
             Height = height;
         }
         else return;
-
+            //if schwierigkeit = ... && enboss != 1
         if (t == 1 && getWorld().numberOfObjects() <= 10 ) {
             getWorld().addObject(new Shark(), 780, Height);
         }
@@ -463,6 +463,9 @@ public class Dolphin extends Animals
         }
         else if (t == 5 && getWorld().numberOfObjects() <= 10) {
             getWorld().addObject(new Stone(), 790, Height);
+        }
+        else if (t == 6 && getWorld().numberOfObjects() <= 10) {
+            getWorld().addObject(new Starfish(), 790, Height);
         }
         else return;
     }
