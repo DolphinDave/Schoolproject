@@ -14,6 +14,7 @@ public class Animals extends Actor
     public static int blowfishtouch = 0;
     public static int numberofrocks = 10;
     public static int untouchable = 0;
+    public static int rockcounter = 1;
     /**
      * Act - do whatever the Animals wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

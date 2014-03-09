@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class rockcounter extends Dolphin
+public class rockcounter extends Animals
 {
     private GreenfootImage rockimage1 = new GreenfootImage("rock/rockimage1.png");
     private GreenfootImage rockimage2 = new GreenfootImage("rock/rockimage2.png");

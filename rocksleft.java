@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class rocksleft extends Dolphin
+public class rocksleft extends Animals
 {
     /**
      * Act - do whatever the rocksleft wants to do. This method is called whenever
