@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class playagain extends Animals
 {
-    public static GreenfootSound freesound = new GreenfootSound("Sub.Sound - Feel the Buzz.mp3");
+    public static GreenfootSound bevorestart = new GreenfootSound("bevorestart.wav");
     private GreenfootImage clickagain = new GreenfootImage("clickagain/clickagain.png");
     private GreenfootImage clickagain1 = new GreenfootImage("clickagain/clickagain1.png");
     private int mx;
@@ -23,7 +23,7 @@ public class playagain extends Animals
     {
         Greenfoot.setSpeed(50);
         removeenemys();
-        freesound.playLoop();
+        bevorestart.playLoop();
         checkforclicked();
         startmaingame();
     }    
@@ -73,7 +73,7 @@ public class playagain extends Animals
             getWorld().addObject(new rockcounter(), 60, 100);
             getWorld().addObject(new Dolphin(), 400, 300);
             world dolphinworld = (world) getWorld();
-            freesound.stop();
+            bevorestart.pause();
             dolphinworld.musicplay(); // starts the mainmusic
 
             getWorld().removeObject(this);

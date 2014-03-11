@@ -9,8 +9,7 @@ import java.util.List;
  */
 public class world extends World
 {
-    public static GreenfootSound start = new GreenfootSound("start.wav");
-
+    public static GreenfootSound start = new GreenfootSound("Sub.Sound - Feel the Buzz.mp3"); // melody in the main game
     /**
      * Constructor for objects of class world.
      * 
