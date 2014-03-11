@@ -354,12 +354,6 @@ public class Dolphin extends Animals
                     imagecounter = 30;
                 }
             }
-            else if (toxic >= 2) {
-                world dolphinworld = (world) getWorld();
-                dolphinworld.musicstop();
-                getWorld().addObject(new startscreen(), 400, 200);
-                getWorld().removeObject(this);
-            }
         }
 
         else if (toxic == 0 && slowdownmove == 0 && untouchable > 100) {
@@ -1279,8 +1273,14 @@ public class Dolphin extends Animals
             world dolphinworld = (world) getWorld();
             dolphinworld.musicstop();
             health--;
+            getWorld().addObject(new playagain(), 400, 200);
+            getWorld().removeObjects(getWorld().getObjects(Blowfish.class));
+            getWorld().removeObjects(getWorld().getObjects(Jellyfish.class));
+            getWorld().removeObjects(getWorld().getObjects(Shark.class));
+            getWorld().removeObjects(getWorld().getObjects(rockcounter.class));
+            getWorld().removeObjects(getWorld().getObjects(Stone.class));
+            getWorld().removeObjects(getWorld().getObjects(Starfish.class));
             getWorld().removeObject(this);
-            Greenfoot.stop(); // just for now
         }
         else if (canSee(Shark.class) && (getWorld().getObjects(Shark.class).size() != 0) && untouchable > 0) {  // checks if the two actors are touching and checks if ther are any Sharks in the World
             Actor shark = getOneIntersectingObject(Shark.class);
@@ -1319,12 +1319,18 @@ public class Dolphin extends Animals
     }
 
     public void toxicdeath() {
-        world dolphinworld = (world) getWorld();
         if (toxic >= 2) {
-            health--;
+            world dolphinworld = (world) getWorld();
             dolphinworld.musicstop();
+            health--;
+            getWorld().addObject(new playagain(), 400, 200);
+            getWorld().removeObjects(getWorld().getObjects(Blowfish.class));
+            getWorld().removeObjects(getWorld().getObjects(Jellyfish.class));
+            getWorld().removeObjects(getWorld().getObjects(Shark.class));
+            getWorld().removeObjects(getWorld().getObjects(rockcounter.class));
+            getWorld().removeObjects(getWorld().getObjects(Stone.class));
+            getWorld().removeObjects(getWorld().getObjects(Starfish.class));
             getWorld().removeObject(this);
-            Greenfoot.stop(); // just for now
         }
     }
 
@@ -1372,7 +1378,7 @@ public class Dolphin extends Animals
             onlyonce--;
         }
         else if (untouchable == 0) {
-        onlyonce = 1;
+            onlyonce = 1;
         }
     }
 }

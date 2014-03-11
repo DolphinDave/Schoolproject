@@ -69,11 +69,13 @@ public class playagain extends Animals
         }
         else if (k == 0) {            
             k = 10;
+            toxic = 0;
             getWorld().addObject(new rockcounter(), 60, 100);
+            getWorld().addObject(new Dolphin(), 400, 300);
             world dolphinworld = (world) getWorld();
-            maingame++;
             freesound.stop();
             dolphinworld.musicplay(); // starts the mainmusic
+
             getWorld().removeObject(this);
         }
     }
