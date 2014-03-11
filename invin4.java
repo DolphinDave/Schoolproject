@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class invin4 extends Dolphin
+public class invin4 extends Animals
 {
     private GreenfootImage invin = new GreenfootImage("invin/invin.png");
     private GreenfootImage empty = new GreenfootImage("invin/empty.png");
@@ -19,13 +19,13 @@ public class invin4 extends Dolphin
         follow();
         blinkparticle();
     }   
-    
+
     public void follow() {
-    int xdolphin = ((Dolphin) getWorld().getObjects(Dolphin.class).get(0)).getX();
-    int ydolphin = ((Dolphin) getWorld().getObjects(Dolphin.class).get(0)).getY();
-    
-    setLocation(xdolphin - 25,ydolphin - 15);
-    
+        int xdolphin = ((Dolphin) getWorld().getObjects(Dolphin.class).get(0)).getX();
+        int ydolphin = ((Dolphin) getWorld().getObjects(Dolphin.class).get(0)).getY();
+
+        setLocation(xdolphin - 25,ydolphin - 15);
+
     }
 
     public void blinkparticle() {

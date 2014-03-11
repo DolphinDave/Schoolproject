@@ -6,25 +6,36 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class startscreen extends Animals
+public class playagain extends Animals
 {
     public static GreenfootSound freesound = new GreenfootSound("Sub.Sound - Feel the Buzz.mp3");
-    private GreenfootImage click = new GreenfootImage("clickenter/clickenter.png");
-    private GreenfootImage click1 = new GreenfootImage("clickenter/clickenter1.png");
+    private GreenfootImage clickagain = new GreenfootImage("clickagain/clickagain.png");
+    private GreenfootImage clickagain1 = new GreenfootImage("clickagain/clickagain1.png");
     private int mx;
     private int my;
     private int k = 25;
+    private int onetime = 1;
     /**
-     * Act - do whatever the startscreen wants to do. This method is called whenever
+     * Act - do whatever the playagain wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
         Greenfoot.setSpeed(50);
+        removeenemys();
         freesound.playLoop();
         checkforclicked();
         startmaingame();
     }    
+
+    public void removeenemys() {
+        if (onetime == 1) {
+            getWorld().removeObjects(getWorld().getObjects(Blowfish.class));
+            getWorld().removeObjects(getWorld().getObjects(Jellyfish.class));
+            getWorld().removeObjects(getWorld().getObjects(Shark.class));
+            onetime--;
+        }
+    }
 
     public void checkforclicked() {
         MouseInfo mouse = Greenfoot.getMouseInfo();
@@ -33,21 +44,21 @@ public class startscreen extends Animals
             my = mouse.getY();  
         }  
         if(mx >= 83 && mx <= 716 && my >= 143 && my <= 257) { //Greenfoot.getMouseInfo().getX() // alternativ
-            setImage(click1);
+            setImage(clickagain1);
         }
         else {
-            setImage(click);
+            setImage(clickagain);
         }
 
         if (Greenfoot.mouseClicked(this)) {
             k--;
         }
         else if (Greenfoot.isKeyDown("enter")) {
-            setImage(click1);
+            setImage(clickagain1);
             k--;
         }
         else if (Greenfoot.isKeyDown("escape")) {
-            setImage(click1);
+            setImage(clickagain1);
             k--;
         }
     }
@@ -58,18 +69,7 @@ public class startscreen extends Animals
         }
         else if (k == 0) {            
             k = 10;
-            getWorld().removeObjects(getWorld().getObjects(Blowfish.class));
-            getWorld().removeObjects(getWorld().getObjects(Jellyfish.class));
-            getWorld().removeObjects(getWorld().getObjects(Shark.class));
-            //Greenfoot.setWorld(new world());
             getWorld().addObject(new rockcounter(), 60, 100);
-            getWorld().addObject(new rocksleft(), 70, 20);
-            getWorld().addObject(new rocksleftcount(), 155, 20);
-            getWorld().addObject(new score(), 670, 20);
-            getWorld().addObject(new scorecounter(), 720, 20);
-            getWorld().addObject(new health(), 370, 20);
-            getWorld().addObject(new display(), 435, 20);
-            getWorld().addObject(new Dolphin(), 400, 300);
             world dolphinworld = (world) getWorld();
             maingame++;
             freesound.stop();

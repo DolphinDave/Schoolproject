@@ -73,7 +73,6 @@ public class Dolphin extends Animals
     private GreenfootImage dolphin315it = new GreenfootImage("dolphinit/dolphin315it.png");
     private GreenfootImage dolphin3151it = new GreenfootImage("dolphinit/dolphin3151it.png");
     public static int direction = 0; // for a ball or semthing else, 0 = right, 1 = 45 ... in ball check for number, then setLocation(getX() + ..., getY() - ...);
-    public static int blink = 0;
     private int waitcounter = 50;
     private int imagecounter = 30;
     public static int number;  // says how many shoots are fired
@@ -358,6 +357,7 @@ public class Dolphin extends Animals
             else if (toxic >= 2) {
                 world dolphinworld = (world) getWorld();
                 dolphinworld.musicstop();
+                getWorld().addObject(new startscreen(), 400, 200);
                 getWorld().removeObject(this);
             }
         }
