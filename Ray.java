@@ -25,7 +25,7 @@ public class Ray extends Animals
         int up = Greenfoot.getRandomNumber(50);
         setLocation(getX() - 1, getY()); // just as fast as flow is
         if (goupdown >= 35) {
-            setLocation(getX(), getY() + 1);
+            //setLocation(getX(), getY() + 1);
             goupdown--;
             setImage(ray);
         }
@@ -35,7 +35,7 @@ public class Ray extends Animals
             setImage(ray1);
         }
         else if (steady == 1 && goupdown >= 0) {
-            setLocation(getX(), getY() - 2);
+            //setLocation(getX(), getY() - 2);
             goupdown--;
         }
         else if (steady == 1 && goupdown < 0) {
