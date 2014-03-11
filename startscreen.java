@@ -41,6 +41,14 @@ public class startscreen extends Animals
         if (Greenfoot.mouseClicked(this)) {
             k--;
         }
+        else if (Greenfoot.isKeyDown("enter")) {
+            setImage(click1);
+            k--;
+        }
+        else if (Greenfoot.isKeyDown("escape")) {
+            setImage(click1);
+            k--;
+        }
     }
 
     public void countd() {
