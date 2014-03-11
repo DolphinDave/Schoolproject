@@ -1322,8 +1322,8 @@ public class Dolphin extends Animals
         world dolphinworld = (world) getWorld();
         if (toxic >= 2) {
             health--;
-            getWorld().removeObject(this);
             dolphinworld.musicstop();
+            getWorld().removeObject(this);
             Greenfoot.stop(); // just for now
         }
     }

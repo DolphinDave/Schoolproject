@@ -98,6 +98,7 @@ public class Shark extends Animals
     }
 
     public void removeSR() {
+        int height = Greenfoot.getRandomNumber(600);
         if (isrockInRange1() && (getWorld().getObjects(rock.class).size() != 0)) {
             score++;
             getWorld().removeObjects(getWorld().getObjects(rock.class));
@@ -113,9 +114,12 @@ public class Shark extends Animals
             getWorld().removeObjects(getWorld().getObjects(rock3.class));
             getWorld().removeObject(this);
         }
-        else if (getX() <= 15) {
+        else if (getX() <= 15 && maingame >= 1) {
             waitforturn = 20;
             getWorld().removeObject(this);
+        }
+        else if (getX() <= 10 && maingame == 0) {
+            setLocation(785, height);
         }
         else return;
     }

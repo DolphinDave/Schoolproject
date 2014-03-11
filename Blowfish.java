@@ -117,6 +117,7 @@ public class Blowfish extends Animals
     }
 
     public void removeB() {
+        int height = Greenfoot.getRandomNumber(600);
         if (isrockInRange1() && (getWorld().getObjects(rock.class).size() != 0)) {
             score++;
             getWorld().removeObjects(getWorld().getObjects(rock.class));
@@ -132,9 +133,13 @@ public class Blowfish extends Animals
             getWorld().removeObjects(getWorld().getObjects(rock3.class));
             getWorld().removeObject(this);
         }
-        else if (getX() <= 10) {
+        else if (getX() <= 10 && maingame >= 1) {
             waitforturn = 20;
             getWorld().removeObject(this);
+        }
+        else if (getX() <= 10 && maingame == 0) {
+            waitforturn = 20;
+            setLocation(790, height);
         }
         else return;
     }

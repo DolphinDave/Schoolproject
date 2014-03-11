@@ -61,6 +61,7 @@ public class Jellyfish extends Animals
     }
 
     public void removeJR() {
+        int height = Greenfoot.getRandomNumber(600);
         if (isrockInRange1() && (getWorld().getObjects(rock.class).size() != 0)) {
             score++;
             getWorld().removeObjects(getWorld().getObjects(rock.class));
@@ -76,8 +77,11 @@ public class Jellyfish extends Animals
             getWorld().removeObjects(getWorld().getObjects(rock3.class));
             getWorld().removeObject(this);
         }
-        else if (getX() <= 10) {
+        else if (getX() <= 10 && maingame >= 1) {
             getWorld().removeObject(this);
+        }
+        else if (getX() <= 10 && maingame == 0) {
+            setLocation(790, height);
         }
         else return;
     }

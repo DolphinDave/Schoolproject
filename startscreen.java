@@ -8,42 +8,66 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class startscreen extends Animals
 {
+    private GreenfootImage click = new GreenfootImage("clickenter/clickenter.png");
+    private GreenfootImage click1 = new GreenfootImage("clickenter/clickenter1.png");
+    private int mx;
+    private int my;
+    private int k = 25;
     /**
      * Act - do whatever the startscreen wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        // Add your action code here.
+        Greenfoot.setSpeed(50);
+        checkforclicked();
+        countd();
+        startmaingame();
     }    
 
-    public void randomEnemy() {
-        int t = Greenfoot.getRandomNumber(500);
-        int height = Greenfoot.getRandomNumber(600);
-        int Height;
-        if (height >= 50 && height <= getWorld().getHeight() - 45) {
-            Height = height;
+    public void checkforclicked() {
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        if(mouse != null){  
+            mx = mouse.getX();  
+            my = mouse.getY();  
+        }  
+        if(mx >= 83 && mx <= 716 && my >= 143 && my <= 257) { //Greenfoot.getMouseInfo().getX() // alternativ
+            setImage(click1);
         }
-        else return;
-        //if schwierigkeit = ... && enboss != 1
-        if (t == 1 && getWorld().numberOfObjects() <= 10 ) {
-            getWorld().addObject(new Shark(), 780, Height);
+        else {
+            setImage(click);
         }
-        else if (t == 2 && getWorld().numberOfObjects() <= 10) {
-            getWorld().addObject(new Jellyfish(), 790, Height);
+
+        if (Greenfoot.mouseClicked(this)) {
+            k--;
         }
-        else if (t == 3 && getWorld().numberOfObjects() <= 10) {
-            getWorld().addObject(new Blowfish(), 790, Height);
-        }
-        else if (t == 4 && getWorld().numberOfObjects() <= 10) {
-            getWorld().addObject(new Stone(), 790, Height);
-        }
-        else if (t == 5 && getWorld().numberOfObjects() <= 10) {
-            getWorld().addObject(new Stone(), 790, Height);
-        }
-        else if (t == 6 && getWorld().numberOfObjects() <= 10) {
-            getWorld().addObject(new Starfish(), 790, Height);
-        }
-        else return;
     }
-}
+
+    public void countd() {
+        if (k != 10 && k >= 1) {
+            k--;
+        }
+    }
+
+    public void startmaingame() {
+        if (k == 0) {            
+            k = 10;
+            getWorld().removeObjects(getWorld().getObjects(Blowfish.class));
+            getWorld().removeObjects(getWorld().getObjects(Jellyfish.class));
+            getWorld().removeObjects(getWorld().getObjects(Shark.class));
+            //Greenfoot.setWorld(new world());
+            getWorld().addObject(new rockcounter(), 60, 100);
+            getWorld().addObject(new rocksleft(), 70, 20);
+            getWorld().addObject(new rocksleftcount(), 155, 20);
+            getWorld().addObject(new score(), 670, 20);
+            getWorld().addObject(new scorecounter(), 720, 20);
+            getWorld().addObject(new health(), 370, 20);
+            getWorld().addObject(new display(), 435, 20);
+            getWorld().addObject(new Dolphin(), 400, 300);
+            world dolphinworld = (world) getWorld();
+            maingame++;
+            dolphinworld.musicplay(); // starts the mainmusic
+            getWorld().removeObject(this);
+        }
+    }
+}    

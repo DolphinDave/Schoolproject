@@ -19,14 +19,14 @@ public class world extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        //prepare();
+        prepare();
     }
 
     public void started() { //Sets speed after pausing back to 50
         Greenfoot.setSpeed(50);
-        if (getObjects(Dolphin.class).size() != 0) {
-            start.playLoop();
-        }
+        //if (getObjects(Dolphin.class).size() != 0) {
+        //    start.playLoop();
+        //}
     }
 
     public void stopped()  
@@ -36,18 +36,18 @@ public class world extends World
 
     private void prepare()
     {
-        addObject(new rockcounter(), 60, 100);
-        addObject(new rocksleft(), 70, 20);
-        addObject(new rocksleftcount(), 155, 20);
-        addObject(new score(), 670, 20);
-        addObject(new scorecounter(), 720, 20);
-        addObject(new health(), 370, 20);
-        addObject(new display(), 435, 20);
-        addObject(new Dolphin(), 400, 300);
+        addObject(new Blowfish(), 780, 300);
+        addObject(new Jellyfish(), 760, 500);
+        addObject(new Shark(), 740, 100);
+        addObject(new startscreen(), 400, 200);
     }
 
     public void musicstop() {
         start.stop();
+    }
+
+    public void musicplay() {
+        start.playLoop();
     }
 
 }
