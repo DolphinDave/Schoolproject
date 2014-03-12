@@ -14,6 +14,7 @@ public class startscreen extends Animals
     private int mx;
     private int my;
     private int k = 25;
+    private int addcheck = 1;
     /**
      * Act - do whatever the startscreen wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -21,10 +22,19 @@ public class startscreen extends Animals
     public void act() 
     {
         Greenfoot.setSpeed(50);
+        introduction();
         bevorestart.playLoop();
         checkforclicked();
         startmaingame();
     }    
+
+    public void introduction() {
+        if (addcheck == 1) {
+            getWorld().addObject(new check(), 750, 543);
+            getWorld().addObject(new introduction(), 650, 550);
+            addcheck--;
+        }
+    }
 
     public void checkforclicked() {
         MouseInfo mouse = Greenfoot.getMouseInfo();
