@@ -66,11 +66,13 @@ public class startscreen extends Animals
         if (k != 10 && k >= 1) {
             k--;
         }
-        else if (k == 0) {            
+        else if (k == 0 && introduction == 0) {            
             k = 10;
             getWorld().removeObjects(getWorld().getObjects(Blowfish.class));
             getWorld().removeObjects(getWorld().getObjects(Jellyfish.class));
             getWorld().removeObjects(getWorld().getObjects(Shark.class));
+            getWorld().removeObjects(getWorld().getObjects(check.class));
+            getWorld().removeObjects(getWorld().getObjects(introduction.class));
             //Greenfoot.setWorld(new world());
             getWorld().addObject(new rockcounter(), 60, 100);
             getWorld().addObject(new rocksleft(), 70, 20);
@@ -85,6 +87,9 @@ public class startscreen extends Animals
             bevorestart.stop();
             dolphinworld.musicplay(); // starts the mainmusic
             getWorld().removeObject(this);
+        }
+        else if (k == 0 && introduction == 1) {
+            getWorld().addObject(new turtle(), 0, 450);
         }
     }
 }    
